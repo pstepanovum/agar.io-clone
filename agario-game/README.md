@@ -1,5 +1,7 @@
 # Agario
 
+
+Try: agar-io-clone-8std-it4k9c28u-pstepanovums-projects.vercel.app
 This is a multiplayer blob game inspired by **Agar.io** where players control blobs that move around the game world. The objective is to grow your blob by consuming smaller blobs and other players while avoiding being consumed by larger blobs. The game includes AI players, player splitting, repulsion between blobs, and merging mechanics. The leaderboard shows the top players.
 
 ## Features
