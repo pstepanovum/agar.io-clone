@@ -46,6 +46,40 @@ This is a multiplayer blob game inspired by **Agar.io** where players control bl
 - [ ] **Add Settings Menu**: Implement a settings menu for volume control, graphics, and gameplay options.
 - [ ] **Mobile Compatibility**: Add support for mobile controls and ensure responsive design for different screen sizes.
 
+---
+
+## Design and Animations To-Do List
+
+### Visual Design
+
+- [ ] **Blob Customization**: Allow players to customize the appearance of their blobs (colors, patterns, skins).
+- [ ] **Smooth Transitions**: Create smoother transitions for blob size changes (e.g., growing or shrinking after consuming another blob).
+- [ ] **UI Design Overhaul**: Improve the game's overall UI design for menus, leaderboards, and gameplay HUD (heads-up display).
+- [ ] **Leaderboard Design**: Enhance the appearance of the leaderboard with clean, modern styling and animations.
+
+### Animations
+
+- [ ] **Blob Movement Animation**: Add smooth animations for blob movement, ensuring it feels fluid when blobs move toward the cursor.
+- [ ] **Splitting Animation**: Design an animation for blob splitting that gives a satisfying effect, like a "pop" or burst.
+- [ ] **Merging Animation**: Create a merging animation that smoothly combines two blobs, emphasizing the mass absorption process.
+- [ ] **Repulsion Effect**: Add a subtle bouncing or force effect when blobs repel each other to avoid overlap.
+- [ ] **Eating Animation**: Design an animation for when a blob consumes smaller blobs or other players, making it visually rewarding.
+- [ ] **Leaderboard Animation**: Animate the leaderboard update so that players rise or fall in rankings smoothly, with visual cues like color shifts or size adjustments.
+
+### Particle Effects
+
+- [ ] **Particle Trails**: Add particle trails behind blobs when they reach higher speeds, adding a dynamic element to the game.
+- [ ] **Collision Effects**: Implement visual effects when blobs collide, like small particles or waves radiating outward.
+- [ ] **Victory Animations**: Create a special animation for the top player on the leaderboard, such as a crown or glow effect.
+
+### Sound Design (Optional)
+
+- [ ] **Blob Movement Sounds**: Add subtle sounds when blobs move quickly or split.
+- [ ] **Collision Sounds**: Add light "bumping" sounds when blobs collide.
+- [ ] **Consumption Sound Effect**: Design a satisfying sound for when a blob consumes another, emphasizing the growth.
+
+---
+
 ## How to Run
 
 1. Clone the repository:
@@ -68,4 +102,4 @@ This is a multiplayer blob game inspired by **Agar.io** where players control bl
 
 ---
 
-This `README.md` gives a clear overview of the current game, the to-do list, and instructions for running the game locally.
+This `README.md` file now includes a section specifically for design and animation improvements, alongside the general gameplay and feature to-do list. This will help organize and prioritize visual and interactive elements in the game.
