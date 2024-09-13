@@ -1,8 +1,4 @@
-Here's a `README.md` file with a project overview and a to-do list:
-
----
-
-# Multiplayer Blob Game
+# Agario
 
 This is a multiplayer blob game inspired by **Agar.io** where players control blobs that move around the game world. The objective is to grow your blob by consuming smaller blobs and other players while avoiding being consumed by larger blobs. The game includes AI players, player splitting, repulsion between blobs, and merging mechanics. The leaderboard shows the top players.
 
