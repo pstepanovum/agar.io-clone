@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agar.io Clone</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <canvas id="gameCanvas"></canvas>
+    <div id="dashboard">
+        Mass: <span id="mass"></span><br>
+        Location: <span id="location"></span><br>
+        Zoom: <span id="zoom"></span>x
+    </div>
+    <div id="leaderboard">
+        <h3>Top 10 Players</h3>
+        <ol id="top-players"></ol>
+    </div>
+
+    <div id="game-over">
+        <div>
+            <p>Game Over!</p>
+            <p>Reload the page to try again.</p>
+        </div>
+    </div>
+    
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/socket.io-client/dist/socket.io.js"></script>
+<script src="/root/bot.js"></script>
+<script src="/root/food.js"></script>
+<script src="/root/player.js"></script>
+<script src="/root/game.js"></script>
+
+
+</html>
+
