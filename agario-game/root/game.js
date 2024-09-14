@@ -1,6 +1,9 @@
 
 // i typed poo po poooop
 
+
+
+
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
@@ -31,6 +34,7 @@ const MIN_MASS_RATIO = 1.1;
 //                  Player Settings
 //-------------------------------------------------------------//
 
+
 const player = {
     blobs: [{
         x: worldSize / 2,
@@ -38,11 +42,13 @@ const player = {
         radius: Math.sqrt(100 / Math.PI),  // Initial radius based on the initial mass
         mass: 1000,
         color: 'blue',
-        speed: 2,
+        speed: 1,
         dx: 0,
         dy: 0
     }]
 };
+
+
 
 const camera = {
     x: player.blobs[0].x,
@@ -102,7 +108,7 @@ function movePlayer() {
     }
 
     // Repulsion between blobs to avoid overlap
-    const repulsionForce = 0.5; // Adjust as needed
+    const repulsionForce = 0.5 ; // Adjust as needed
     for (let i = 0; i < player.blobs.length; i++) {
         for (let j = i + 1; j < player.blobs.length; j++) {
             const dx = player.blobs[i].x - player.blobs[j].x;
@@ -121,9 +127,15 @@ function movePlayer() {
             }
         }
     }
-
+    
     // Attraction between player's blobs
-    const attractionForce = 0.05; // Base attraction force
+
+    
+    
+
+    
+
+    const attractionForce = 0.3 / (player.blobs.length * 2); // Base attraction force
     player.blobs.forEach((blob1, index1) => {
         player.blobs.forEach((blob2, index2) => {
             if (index1 >= index2) return; // Avoid duplicate calculations
@@ -157,9 +169,13 @@ function movePlayer() {
                 if (distance < minDistance) {
                     // Merge the two blobs
                     player.blobs[i].mass += player.blobs[j].mass;
-                    player.blobs[i].radius = Math.sqrt(player.blobs[i].mass / Math.PI);
+                     player.blobs[i].radius = Math.sqrt(player.blobs[i].mass / Math.PI);
                     player.blobs.splice(j, 1); // Remove the merged blob
                     j--; // Adjust index after removing an element
+
+
+
+                    // playBlob_population -=1;
                 }
             }
         }
@@ -240,7 +256,7 @@ function generateAIPlayers(count) {
                 radius: 100,
                 mass: 100,
                 color: `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`,
-                speed: 1.5,
+                speed: 1,
                 dx: 0,
                 dy: 0
             }],
@@ -343,11 +359,13 @@ function updateLeaderboard() {
     document.getElementById('top-players').innerHTML = leaderboardHTML;
 }
 
+// var playBlob_population = 1;
 
 function split() {
+    // playBlob_population *= 2;
     const newBlobs = [];
     player.blobs.forEach(blob => {
-        if (blob.mass >= 20) {
+        if (blob.mass >= 20 && player.blobs.length <=10) {
             const angle = Math.atan2(mouseY - canvas.height / 2, mouseX - canvas.width / 2);
             const newBlob = {
                 x: blob.x + Math.cos(angle) * blob.radius,
@@ -386,6 +404,10 @@ function eatPlayers() {
                         aiPlayers.splice(aiIndex, 1);
                         console.log("You ate an AI player " + ai.name);
                         generateAIPlayers(1); // Respawn one AI player
+
+
+
+                        // playBlob_population -=1;
                     }
                 }
             });
@@ -494,8 +516,17 @@ function update() {
         gameOver();
         canvas.addEventListener('click', restartGame, { once: true });
     }
-}
+      
+    console.log("player.blobs.length  ", player.blobs.length);
+    // player.blobs.length 
 
+    const totalMass = player.blobs.reduce((sum, blob) => sum + blob.mass, 0);
+    player.blobs[0].speed = totalMass / ( player.blobs[0].mass  );
+    console.log(player.blobs[0].speed)
+
+    console.log("my blob population: ", player.blobs.length);
+}
+ 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawFood();
@@ -549,3 +580,13 @@ resizeCanvas();
 generateFood();
 generateAIPlayers(10);
 loop();
+
+
+
+function printPooPo() {
+    setInterval(function() {
+        console.log("playBlob_population: ");
+    }, 1000);
+}
+
+printPooPo();
